@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <title>Shopping Cart</title>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
+   <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+   <section>
+      <div class="container">
+         <div class="cart">
+            <div class="col-md-12 col-lg-10 mx-auto">
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item">
+                        <img src="images/product-1.png" alt="">
+                        <h5>iPhone 11 128GB Black</h5>
+                     </div>
+
+
+
+                     
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+                          
+                           <button  id="phoneminus1"  class="btn btn-default"><i class="fas fa-minus"></i></button>
+                        
+                           <input id="input1"  type="text" class="form-control text-center" value="1">
+                       
+                           <button  id="phoneplus1"  class="btn btn-default"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <h5 id="phoneprice" >100</h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+                     <div class="col-md-7 center-item mx-auto">
+                        <img src="images/product-2.png" alt="">
+                        <h5>iPhone 11 Silicone Case - Black</h5>
+                     </div>
+                     <div class="col-md-5 center-item">
+                        <div class="input-group number-spinner">
+
+                           
+
+                           <button  id="phoneminus2" class="btn btn-default"><i class="fas fa-minus"></i></button>
+
+                           <input type="text" id="input2" class="form-control text-center" value="1">  
+
+                           <button id="phoneplus2" class="btn btn-default" ><i class="fas fa-plus"></i></button>
+
+                        </div>
+                        <h5 id="coverprice" >10</h5>
+                        <img src="images/remove.png" alt="" class="remove-item">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cart-item">
+                  <div class="row">
+
+                     <div class="col-md-8">
+                        <h5>Subtotal: </h5>
+                        <h5>Tax:</h5>
+                        <h5>Total:</h5>
+                     </div>
+
+                     <div class="col-md-4 status">
+                        <h5 id="subtotal" >110</h5>
+                        <h5>$0</h5>
+                        <h5 id="totalprice" >110</h5>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-12 pt-4 pb-4">
+                  <button type="button" class="btn btn-success check-out">Check Out</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+     <script>
+
+         //// phone plus
+         document.getElementById('phoneplus1').addEventListener("click",function(event) {
+
+                  
+         const var1=  document.getElementById('input1').value
+
+       const  var1int = parseInt(var1)
+       
+       const  varnum = var1int + 1;
+
+         document.getElementById('input1').value = varnum
+
+         const phoneprice = document.getElementById('phoneprice').innerText
+                      
+              const phonepricenumber =   parseInt( phoneprice)
+              
+
+             var phonepriceaftermul = 100 *  varnum
+            //  console.log(    phonepriceaftermul )
+            //  console.log(     phonepricenumber )
+            //  console.log(    varnum )
+
+             document.getElementById('phoneprice').innerText = phonepriceaftermul
+             const subtotal = document.getElementById('subtotal').innerText
+             const subtotalpricenumber =   parseInt( subtotal)
+             const subtotalprice = subtotalpricenumber + 100
+             console.log(    subtotalprice )
+             document.getElementById('subtotal').innerText = subtotalprice
+
+             
+             const total = document.getElementById('totalprice').innerText
+             const totalpricenumber =   parseInt( total)
+             const totalprice = totalpricenumber + 100
+             console.log(    totalprice )
+             document.getElementById('totalprice').innerText = totalprice
+
+
+
+         } )
+
+                     //// phone minus
+
+              document.getElementById('phoneminus1').addEventListener("click",function(event) {
+
+                                 
+               const var1=  document.getElementById('input1').value
+
+               const   var1int = parseInt(var1)
+               const varnum = var1int - 1;
+
+               document.getElementById('input1').value = varnum
+
+               
+               const phoneprice = document.getElementById('phoneprice').innerText
+                      
+              const phonepricenumber =   parseInt( phoneprice)
+              
+
+             var phonepriceaftermul = phonepricenumber - 100
+            //  console.log(    phonepriceaftermul )
+            //  console.log(     phonepricenumber )
+            //  console.log(    varnum )
+
+             document.getElementById('phoneprice').innerText = phonepriceaftermul
+
+               //console.log(varnum) phonepricenumber
+
+               document.getElementById('phoneprice').innerText = phonepriceaftermul
+             const subtotal = document.getElementById('subtotal').innerText
+             const subtotalpricenumber =   parseInt( subtotal)
+             const subtotalprice = subtotalpricenumber - 100
+             console.log(    subtotalprice )
+             document.getElementById('subtotal').innerText = subtotalprice
+
+ 
+             const total = document.getElementById('totalprice').innerText
+             const totalpricenumber =   parseInt( total)
+             const totalprice = totalpricenumber - 100
+             console.log(    totalprice )
+             document.getElementById('totalprice').innerText = totalprice
+
+
+
+               } )
+
+
+
+
+
+
+
+
+
+
+        /// cover    plus
+         
+         document.getElementById('phoneplus2').addEventListener("click",function(event) {
+
+         
+           const var1=  document.getElementById('input2').value
+
+           const    var1int = parseInt(var1)
+           const   varnum = var1int + 1;
+
+           document.getElementById('input2').value = varnum
+
+
+
+                     const coverprice = document.getElementById('coverprice').innerText
+                      
+                      const coverpricenumber =   parseInt( coverprice)
+                      
+        
+                     var coverpriceaftermul = 10 *  varnum
+                     console.log(    coverpriceaftermul )
+                     console.log(     coverpricenumber )
+                     console.log(    varnum )
+        
+                     document.getElementById('coverprice').innerText = coverpriceaftermul
+        
+
+
+          //console.log(varnum)
+
+         
+             const total = document.getElementById('totalprice').innerText
+             const totalpricenumber =   parseInt( total)
+             const totalprice = totalpricenumber + 10
+             console.log(    totalprice )
+             document.getElementById('totalprice').innerText = totalprice
+             document.getElementById('subtotal').innerText = totalprice
+
+
+
+
+         } )
+
+        //////  cover   minus
+
+       document.getElementById('phoneminus2').addEventListener("click",function(event) {
+
+                  
+         const var1=  document.getElementById('input2').value
+
+         const    var1int = parseInt(var1)
+         const    varnum = var1int - 1;
+
+         document.getElementById('input2').value = varnum
+
+
+            const coverprice = document.getElementById('coverprice').innerText
+                      
+                      const coverpricenumber =   parseInt( coverprice)
+                      
+        
+                     var coverpriceaftermul = coverpricenumber - 10
+                     console.log(     coverpriceaftermul )
+                     console.log(       coverpricenumber )
+                     console.log(    varnum )
+        
+                     document.getElementById('coverprice').innerText = coverpriceaftermul
+
+
+         //console.log(varnum)
+
+         const total = document.getElementById('totalprice').innerText
+             const totalpricenumber =   parseInt( total)
+             const totalprice = totalpricenumber - 10
+             console.log(    totalprice )
+             document.getElementById('totalprice').innerText = totalprice
+             document.getElementById('subtotal').innerText = totalprice
+             document.getElementById('subtotal').innerText = totalprice
+
+
+
+
+} )
+
+
+
+
+
+
+     </script>
+
+
+
+
+</body>
+
+</html>
